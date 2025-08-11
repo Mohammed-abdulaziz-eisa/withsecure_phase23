@@ -1,0 +1,48 @@
+[project]
+name = "di-temp-homework"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "scikit-learn",
+    "matplotlib",
+    "numpy",
+    "scipy",
+    "pandas>=2.3.1",
+    "onnx>=1.18.0",
+    "click>=8.2.1",
+    "skl2onnx>=1.19.1",
+    "pyclean>=3.1.0",
+    "fastapi>=0.116.1",
+    "onnxruntime>=1.22.1",
+    "python-multipart>=0.0.20",
+    "uvicorn>=0.35.0",
+    "requests>=2.32.4",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.12.4",
+    "pytest>=8.3.2",
+    "httpx>=0.27.0",
+]
+
+[project.optional-dependencies]
+docker = [
+    # Minimal runtime deps required inside the Docker image
+    "fastapi>=0.116.1",
+    "uvicorn>=0.35.0",
+    "onnxruntime>=1.22.1",
+    "numpy",
+    "pandas>=2.3.1",
+    "python-multipart>=0.0.20",
+]
+
+[tool.ruff]
+exclude = [
+    ".archive/",
+    ".venv/",
+    ".ipynb_checkpoints/",
+    "__pycache__/",
+]
